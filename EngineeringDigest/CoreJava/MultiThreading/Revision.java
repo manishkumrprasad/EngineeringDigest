@@ -1,4 +1,4 @@
 package EngineeringDigest.CoreJava.MultiThreading;
 
-public class MadeForFun {
+public class Revision {
 }
