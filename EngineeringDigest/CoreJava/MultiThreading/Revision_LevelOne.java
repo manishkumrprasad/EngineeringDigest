@@ -1,11 +1,15 @@
 package EngineeringDigest.CoreJava.MultiThreading;
 
-public class Revision extends Thread{
+public class Revision_LevelOne{
 
     public static void main(String[] args) {
-        World_Revision w1 = new World_Revision();
+        World_Extends w1 = new World_Extends();
         w1.start();
 
+        World_Runnable w2 = new World_Runnable();
+        w2.run();
+
+        //All The Run Methods Are Executing Together
 
         Boolean run = Boolean.TRUE ;
         while (run){
@@ -21,7 +25,7 @@ public class Revision extends Thread{
 //    }
 //}
 
-class World_Revision extends Thread{
+class World_Extends extends Thread{
 
     @Override
     public void run() {
@@ -32,3 +36,19 @@ class World_Revision extends Thread{
 
     }
 }
+
+class World_Runnable implements Runnable{
+
+    @Override
+    public void run() {
+        for( ;; ){
+            System.out.println("Thread Another");
+            System.out.println(Thread.currentThread().getName());
+        }
+    }
+
+
+}
+
+//Either You Can Use Thread Class Or Implement Runnable Class
+//Remember Runnable Is A Interface
