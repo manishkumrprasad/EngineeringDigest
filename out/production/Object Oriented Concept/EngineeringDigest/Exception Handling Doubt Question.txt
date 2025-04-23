@@ -1,0 +1,45 @@
+package EngineeringDigest.ExceptionHandling;
+
+public class ThrowsDemo {
+    public static void throwOne() throws Exception {
+        System.out.println("Inside ThrowOne Method");
+        throw new Exception("demo");
+    }
+    public static void main(String[] args) {
+        try{
+            throwOne();
+        }catch(Exception e){
+            System.out.println("Caught Exception Name = " + e);
+        }
+    }
+}
+
+This Java program demonstrates exception handling using the `throws` keyword. Here's a breakdown of how it works:
+
+Code Explanation:
+1. Package Declaration:
+   `package EngineeringDigest.ExceptionHandling; 
+   This defines the package in which the class resides.
+
+2. Method `throwOne()`:  
+   - The method prints `"Inside ThrowOne Method"` to the console.  
+   - It then explicitly throws an `Exception` with the message `"demo"`.  
+   - The `throws Exception` in the method signature indicates that this method may throw an exception.
+
+3. Main Method (`main`):  
+   - Calls `throwOne()` inside a `try` block.  
+   - Since `throwOne()` throws an exception, control is transferred to the `catch` block.  
+   - The `catch` block catches the thrown exception and prints `"Caught Exception Name = " + e`, where `e` is the exception object.
+
+Expected Output:
+```
+Inside ThrowOne Method
+Caught Exception Name = java.lang.Exception: demo
+```
+
+Key Takeaways:
+- The `throws` keyword is used to indicate that a method may throw an exception.
+- The exception is thrown inside `throwOne()` but handled in `main()`.
+- The program does not crash because the exception is caught and handled properly.
+
+Let me know if you’d like a deeper dive into Java exception handling! 🚀
