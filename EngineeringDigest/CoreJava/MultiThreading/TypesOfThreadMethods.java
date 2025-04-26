@@ -15,7 +15,7 @@ public class TypesOfThreadMethods extends Thread{
 //        }
 
         try{
-            Thread.sleep(5000);
+            Thread.sleep(5000); //makes the run method sleep for 5seconds
         }catch (InterruptedException e){
             throw new RuntimeException(e);
         }
