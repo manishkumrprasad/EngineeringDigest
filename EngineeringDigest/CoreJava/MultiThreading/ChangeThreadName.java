@@ -36,6 +36,13 @@ public class ChangeThreadName extends Thread{
         c1.start();
         c2.start();
         c3.start();
+        /*
+        Important Notes
+        - Priority is not a guarantee: Setting a higher priority does not guarantee that the thread will be executed immediately or before other threads.
+        - Priority is platform-dependent: The behavior of thread priority can vary across different platforms and JVM implementations.
+        - Use priority judiciously: Overusing priority can lead to starvation of lower-priority threads or even system instability.
+         */
+
 
     }
 }
