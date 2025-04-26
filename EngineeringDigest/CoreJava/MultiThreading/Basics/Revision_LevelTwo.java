@@ -1,6 +1,4 @@
-package EngineeringDigest.CoreJava.MultiThreading;
-
-import java.util.concurrent.ThreadLocalRandom;
+package EngineeringDigest.CoreJava.MultiThreading.Basics;
 
 public class Revision_LevelTwo {
 

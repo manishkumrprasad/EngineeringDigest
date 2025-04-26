@@ -1,4 +1,4 @@
-package EngineeringDigest.CoreJava.MultiThreading;
+package EngineeringDigest.CoreJava.MultiThreading.Basics;
 
 public class WorldImple implements Runnable{
     @Override

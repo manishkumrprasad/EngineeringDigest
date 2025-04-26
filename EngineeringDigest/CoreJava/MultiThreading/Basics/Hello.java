@@ -1,4 +1,4 @@
-package EngineeringDigest.CoreJava.MultiThreading;
+package EngineeringDigest.CoreJava.MultiThreading.Basics;
 
 public class Hello {
     public static void main(String[] args) {
