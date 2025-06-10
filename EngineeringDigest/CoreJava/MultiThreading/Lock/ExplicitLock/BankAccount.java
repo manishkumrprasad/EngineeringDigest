@@ -11,7 +11,7 @@ public class BankAccount extends Thread {
 
     private final Lock lock = new ReentrantLock();
 
-    public synchronized void withdraw(int amount){
+    public void withdraw(int amount){
         System.out.println(Thread.currentThread().getName() + " Attempting To Withdraw " +amount);
 
         try{

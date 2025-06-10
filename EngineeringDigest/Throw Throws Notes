@@ -1,0 +1,132 @@
+Great question! Let’s break down the **`throw`** and **`throws`** keywords in Java, what they do, and how they differ from **`try-catch`** blocks.
+
+---
+
+## 1️⃣ `throw` Keyword
+
+* **Purpose:** To *explicitly throw* (raise) an exception from your code.
+* **Usage:** You use `throw` when you want to create and throw a specific exception object **manually**.
+* **Example:**
+
+  ```java
+  if (age < 18) {
+      throw new IllegalArgumentException("Age must be 18 or older");
+  }
+  ```
+* This immediately stops normal execution and passes the exception up the call stack unless caught.
+
+---
+
+## 2️⃣ `throws` Keyword
+
+* **Purpose:** To **declare** that a method *might throw* one or more exceptions.
+* **Usage:** You put `throws` in a method signature to tell callers of that method: “Hey, you need to handle or declare these exceptions.”
+* **Example:**
+
+  ```java
+  public void readFile(String filename) throws IOException {
+      // code that might throw IOException
+  }
+  ```
+* It doesn’t throw the exception itself; it just says *“this method might throw this exception”*.
+
+---
+
+## How are they different from `try-catch`?
+
+| Feature      | `throw`                                  | `throws`                                     | `try-catch`                               |
+| ------------ | ---------------------------------------- | -------------------------------------------- | ----------------------------------------- |
+| What it does | **Throws** an exception explicitly       | **Declares** exceptions a method might throw | **Handles** exceptions thrown by code     |
+| Where used   | Inside method body                       | In method signature                          | Around code that might throw exceptions   |
+| Effect       | Creates & passes exception up call stack | Warns caller to handle exceptions            | Catches and manages exceptions locally    |
+| Example      | `throw new Exception();`                 | `void f() throws Exception`                  | `try { ... } catch (Exception e) { ... }` |
+
+---
+
+## Quick example putting it all together:
+
+```java
+public void validate(int age) throws IllegalArgumentException {
+    if (age < 18) {
+        throw new IllegalArgumentException("Age must be 18+"); // throw exception
+    }
+}
+
+public static void main(String[] args) {
+    try {
+        validate(16); // might throw IllegalArgumentException
+    } catch (IllegalArgumentException e) {
+        System.out.println("Caught exception: " + e.getMessage()); // handle it here
+    }
+}
+```
+
+---
+
+## Summary:
+
+* **`throw`**: You **throw** an exception explicitly.
+* **`throws`**: You **declare** that a method *may throw* certain exceptions.
+* **`try-catch`**: You **handle** exceptions that occur during execution.
+
+---
+
+Want me to show examples in Kotlin or Python for comparison?
+
+
+Great question!
+
+**No, the exception class name declared in the method signature with `throws` does not have to be exactly the same as the exception you throw inside the method**, but it must cover all **checked exceptions** that the method can potentially throw (either directly or indirectly).
+
+---
+
+### Here’s what that means:
+
+* The `throws` clause in the method signature **must declare all checked exceptions** that **can be thrown** from the method.
+* The method can throw:
+
+  * The exact exception declared in `throws`.
+  * Any subclass of the declared exception.
+* You **do not need** to declare unchecked exceptions (like `RuntimeException` or its subclasses).
+
+---
+
+### Example:
+
+```java
+// IOException is a checked exception
+public void readFile() throws IOException {
+    throw new FileNotFoundException("File not found");
+}
+```
+
+* Here, `readFile` declares `throws IOException`.
+* Inside, it throws `FileNotFoundException`, which is a **subclass** of `IOException`.
+* This is **valid** because the declared exception `IOException` covers the thrown exception.
+
+---
+
+### What’s NOT allowed?
+
+If you throw a checked exception that’s **not declared** or a **superclass not declared**, the compiler will give an error.
+
+```java
+public void example() throws IOException {
+    throw new SQLException("Database error"); // ❌ SQLException not declared or covered by IOException
+}
+```
+
+---
+
+### Summary
+
+| Case                                         | Allowed?      | Reason                |
+| -------------------------------------------- | ------------- | --------------------- |
+| Throw subclass of declared exception         | ✅ Allowed     | Subclass is covered   |
+| Throw exact declared exception               | ✅ Allowed     | Matches declaration   |
+| Throw checked exception not declared         | ❌ Not allowed | Compiler error        |
+| Throw unchecked exception (RuntimeException) | ✅ Allowed     | No declaration needed |
+
+---
+
+If you want, I can explain this with a code snippet or in Kotlin too!
