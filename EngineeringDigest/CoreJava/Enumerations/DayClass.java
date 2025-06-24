@@ -10,5 +10,7 @@ public interface DayClass {
     public static final String FRIDAY = "FRIDAY";
     public static final String SATURDAY = "SATURDAY";
 
+    //Instead of doing this you can create a ENUM and defined this constant over there
+
 
 }
