@@ -13,7 +13,7 @@ public class SetDaemon extends Thread {
         s1.setDaemon(true); //set s1 as a daemon thread
 
         s1.start();
-        System.out.println("Main Thread");
+        System.out.println("VectorDemo Thread");
 
     }
 }

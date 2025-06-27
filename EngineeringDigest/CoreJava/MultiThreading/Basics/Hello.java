@@ -7,7 +7,7 @@ public class Hello {
         World w1 = new World();
         w1.start();
 
-        //And The Main Method Is Another Method
+        //And The VectorDemo Method Is Another Method
         for(; ; ){
             System.out.println(Thread.currentThread().getName());
         }

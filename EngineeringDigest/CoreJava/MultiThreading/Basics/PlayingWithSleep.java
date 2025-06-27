@@ -17,7 +17,7 @@ public class PlayingWithSleep extends Thread{
         p1.start();
         p1.join(); //Ask Ai -> can I use join method to halt other thread and execute main method
         Thread.sleep(2000);
-        System.out.println("Main Thread Executed");
+        System.out.println("VectorDemo Thread Executed");
 
     }
 

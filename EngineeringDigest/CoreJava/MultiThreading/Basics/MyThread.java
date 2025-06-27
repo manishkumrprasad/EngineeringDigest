@@ -21,7 +21,7 @@ public class MyThread extends Thread{
         MyThread t1 = new MyThread();
 //        Thread.currentThread().setPriority(10);
         System.out.println("Thread One Status = "+t1.getState()); //NEW
-        System.out.println("Main Thread Priority = "+Thread.currentThread().getPriority());
+        System.out.println("VectorDemo Thread Priority = "+Thread.currentThread().getPriority());
 
         t1.start();
         System.out.println("Thread One Status = "+t1.getState()); //RUNNABLE

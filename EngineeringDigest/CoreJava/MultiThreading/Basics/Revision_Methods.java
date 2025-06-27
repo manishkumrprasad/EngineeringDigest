@@ -17,7 +17,7 @@ public class Revision_Methods extends Thread {
         Revision_Methods t2 = new Revision_Methods("T2");
 //        t1.setDaemon(true);
         t1.start();
-        System.out.println("This Is Written Inside Main Method");
+        System.out.println("This Is Written Inside VectorDemo Method");
 
     }
 }

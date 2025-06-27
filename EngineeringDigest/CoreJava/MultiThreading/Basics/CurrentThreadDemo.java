@@ -5,7 +5,7 @@ public class CurrentThreadDemo {
         Thread t1 = Thread.currentThread();
 
 
-        System.out.println("Main Thread Reference = "+ t1);
+        System.out.println("VectorDemo Thread Reference = "+ t1);
         System.out.println("Current Name Of The Thread = "+t1.getName());
 
         t1.setName("MainThread");

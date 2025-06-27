@@ -18,7 +18,7 @@ public class Revision_MyThread extends Thread{
         my1.start();
         System.out.println("State After Calling Start Method = " + my1.getState());
 
-        //Make Main Method Sleep For Some Seconds
+        //Make VectorDemo Method Sleep For Some Seconds
         Thread.sleep(1000);
         System.out.println(my1.getState());
 
