@@ -1,5 +1,6 @@
 package EngineeringDigest.CollectionFramework.List.Stack;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
 
@@ -42,6 +43,16 @@ public class StackDemo {
         linkedList.removeLast(); //removing the last element from the list
         linkedList.size(); //returns the size the list
         linkedList.isEmpty();
+
+
+        //Using Arraylist as Stack
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(100);
+        arrayList.add(200);
+        arrayList.add(300);
+
+        arrayList.get(arrayList.size() - 1);
+        arrayList.remove(arrayList.size() - 1);
 
     }
 
