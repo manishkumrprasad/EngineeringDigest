@@ -1,4 +1,4 @@
-package EngineeringDigest.BasicJava.NewJaveFeatures;
+package EngineeringDigest.BasicJava.NewJaveFeatures.Records;
 
 public class Main {
 
