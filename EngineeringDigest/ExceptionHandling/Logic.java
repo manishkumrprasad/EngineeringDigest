@@ -1,4 +1,4 @@
-package EngineeringDigest.BasicJava.Switch;
+package EngineeringDigest.ExceptionHandling;
 
 public class Logic extends Thread{
 
