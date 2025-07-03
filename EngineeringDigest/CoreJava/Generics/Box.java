@@ -1,12 +1,8 @@
 package EngineeringDigest.CoreJava.Generics;
 
-
-
-
 public class Box<T> {
     //Box class will Work according to the parameter passed
         private T value;
-
 
         public T getValue(){
             return value;
@@ -16,8 +12,6 @@ public class Box<T> {
             this.value = value;
         }
 }
-
-
 /*
 
 bounded type parameter applied here

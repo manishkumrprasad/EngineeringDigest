@@ -1,0 +1,91 @@
+Certainly! Understanding **checked** and **unchecked exceptions** is key to writing robust Java code.
+
+---
+
+## ✅ **Checked Exceptions**
+
+### ➤ What are Checked Exceptions?
+
+Checked exceptions are **checked at compile time**. The Java compiler ensures that your code **either catches these exceptions using `try-catch` blocks or declares them using `throws` in the method signature**.
+
+### ➤ Why are they used?
+
+They represent conditions that are **outside the program's control**, but which the program should be prepared to handle — e.g., file I/O, database access, network issues.
+
+### ➤ Examples:
+
+* `IOException`
+* `SQLException`
+* `FileNotFoundException`
+* `ClassNotFoundException`
+* `ParseException`
+
+### ➤ Example Code:
+
+```java
+import java.io.*;
+
+public class CheckedExample {
+    public static void readFile(String fileName) throws IOException {
+        FileReader file = new FileReader(fileName); // may throw FileNotFoundException
+        BufferedReader fileInput = new BufferedReader(file);
+        System.out.println(fileInput.readLine());
+        fileInput.close();
+    }
+
+    public static void main(String[] args) {
+        try {
+            readFile("data.txt");
+        } catch (IOException e) {
+            System.out.println("File error: " + e.getMessage());
+        }
+    }
+}
+```
+
+---
+
+## ❌ **Unchecked Exceptions**
+
+### ➤ What are Unchecked Exceptions?
+
+Unchecked exceptions are **not checked at compile time**, meaning the compiler doesn't force you to handle them. They occur **due to programming errors** and are subclasses of `RuntimeException`.
+
+### ➤ Why are they used?
+
+They typically indicate bugs that should be fixed in the code logic, such as accessing a `null` object or dividing by zero.
+
+### ➤ Examples:
+
+* `NullPointerException`
+* `ArrayIndexOutOfBoundsException`
+* `ArithmeticException`
+* `IllegalArgumentException`
+* `NumberFormatException`
+
+### ➤ Example Code:
+
+```java
+public class UncheckedExample {
+    public static void main(String[] args) {
+        String name = null;
+        System.out.println(name.length()); // Throws NullPointerException
+    }
+}
+```
+
+---
+
+## 🔍 Key Differences
+
+| Feature                        | Checked Exceptions                           | Unchecked Exceptions                          |
+| ------------------------------ | -------------------------------------------- | --------------------------------------------- |
+| Checked at Compile Time?       | Yes                                          | No                                            |
+| Subclass of                    | `Exception` (but **not** `RuntimeException`) | `RuntimeException`                            |
+| Required to handle or declare? | Yes                                          | No                                            |
+| Caused by                      | External conditions (e.g., file not found)   | Program logic bugs (e.g., null pointer)       |
+| Examples                       | `IOException`, `SQLException`                | `NullPointerException`, `ArithmeticException` |
+
+---
+
+Let me know if you want a visual chart or a quiz to help reinforce this!

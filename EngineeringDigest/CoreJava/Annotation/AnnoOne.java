@@ -3,9 +3,6 @@ package EngineeringDigest.CoreJava.Annotation;
 @VeryImportant
 public class AnnoOne {
 
-
-
-
     @Deprecated
     void fun(){
         System.out.println("Hello World");
